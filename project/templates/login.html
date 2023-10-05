@@ -1,0 +1,34 @@
+
+    {% extends 'base.html' %}
+    {% block content %}
+    <h3>Login</h3>
+    <p style="background-image: url('/crowd_bg.jpg');">
+    <div>
+    <form action="loginaction" method="POST">
+        {% csrf_token %}
+        <br>
+        <div class="row">
+            <div class="col-md-7">
+            <div class="form-group">
+                <label for="username">Username : </label>
+                <input type="text" name="username" class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password : </label>
+                <input type="password" name="password" class="form-control">
+            </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Sign-In</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            New Invester? <a href="investorsignup" class="btn btn-warning">Investor Sign-Up</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            New Enterpreneur? <a href="ownersignup" class="btn btn-danger">Enterpreneur Sign-Up</a><br>
+        </div>
+        
+    
+           
+            <div style="background-color:yellow;">{{errmsg}}</div>
+            </div>
+        
+        </div>
+</form>
+{% endblock %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Crowd Funding</title>
+</head>
+<body>
+    <div class="container-fluid">
+        {% load static %}
+        <img src="{% static 'banner5.jpg' %}" alt="person image"/>
+<h1>PUBLISH PROJECT </h1>
+    <form method="POST" class="post-form" action="projectpublishaction">
+        {% csrf_token %}
+        <table class="table table-striped table-bordered table-sm" style="width: 50%">
+            <tr>
+            
+                <td>Project Title</td>
+                <td><input type="text" name="txttitle" class="form-control" required></td>
+            </tr>
+
+            <tr>
+                <td>Project Description</td>
+                <td><input type="text" name="txtdescription" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td>Estimated Hours</td>
+                <td><input type="text" name="txthours" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td>Amount Invited</td>
+                <td><input type="text" name="txtamount" class="form-control" required></td>
+            </tr>
+           
+
+                <td></td>
+                <td><button type="submit" class="btn btn-success">Publish Project</button>{{errmsg}}
+                    <a href="/" class="btn btn-primary">Home</button>
+                </td>
+            </tr>
+        </table>
+        </form>
+        <div style="background-color: lightsalmon;">&nbsp;</div>
+    </div>
+</body>
+</html>

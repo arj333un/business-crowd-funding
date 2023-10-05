@@ -1,0 +1,25 @@
+{% extends 'ownerbase.html' %}
+{% block content %}
+<br>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+    <th>Titile</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for report in reports %}
+    <tr>
+    <td>{{ report.title }}</td>
+    <td>{{ report.description }}</td>
+    </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    <br>
+    <br>
+    <center><a href="/investorhome" class="btn btn-primary">Home</a></center>
+
+{% endblock %}
